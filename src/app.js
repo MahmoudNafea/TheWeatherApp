@@ -24,14 +24,14 @@ app.use(express.static(publicDirectoryPath))
 app.get('', (req, res) => {
     res.render('index', {
         title: 'Weather',
-        name: "Nefo"
+        name: "Mahmoud Elsayed"
     })
 })
 
 app.get('/about', (req, res) => {
     res.render('about', {
-        title: 'About me',
-        name: 'Nefo'
+        title: 'About',
+        name: 'Mahmoud Elsayed'
     })
 })
 
@@ -39,7 +39,7 @@ app.get('/help', (req, res) => {
     res.render('help', {
         title: 'Help',
         message: 'Was it helpful?',
-        name: 'Nefo'
+        name: 'Mahmoud Elsayed'
     })
 })
 app.get('/weather', (req, res) => {
@@ -63,27 +63,7 @@ app.get('/weather', (req, res) => {
             })
         })
     })
-
-    // res.send({
-    //     forecast: "it's nice",
-    //     location: "Philadelphia",
-    //     address: req.query.address
-    // })
 })
-
-app.get('/products', (req, res) => {
-    if (!req.query.search) {
-        return res.send({
-            error: 'You must enter a search term'
-        })
-    }
-
-    console.log(req.query.search)
-    res.send({
-        products: []
-    })
-})
-
 
 app.get('/help/*', (req, res) => {
     res.render('404', {
@@ -96,7 +76,7 @@ app.get('/help/*', (req, res) => {
 app.get('*', (req, res) => {
     res.render('404', {
         title: '404 page',
-        name: 'Nefo',
+        name: 'Mahmoud Elsayed',
         errorMessage: 'Page not found'
     })
 })
